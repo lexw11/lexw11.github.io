@@ -52,14 +52,15 @@
   integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
   crossorigin="anonymous"></script>
   <script type="text/javascript">
+  	var GLOBALobject = GLOBALobject || {};
   	$(window).on('resize', function() {
-	   setTimeout(function(){CMSSpace.changeFBPagePlugin()}, 500);
+	   setTimeout(function(){GLOBALobject.changeFBPagePlugin()}, 500);
 	});
 	 
 	$(window).on('load', function() {
-	   setTimeout(function(){CMSSpace.changeFBPagePlugin()}, 1500);
+	   setTimeout(function(){GLOBALobject.changeFBPagePlugin()}, 1500);
 	});
-	CMSSpace.changeFBPagePlugin = function () {
+	GLOBALobject.changeFBPagePlugin = function () {
 	   //getting parent box width
 	   var container_width = (Number($('.fb-column').width()) - Number($('.fb-column').css('padding-left').replace("px", ""))).toFixed(0);
 	   //getting parent box height
