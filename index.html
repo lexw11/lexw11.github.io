@@ -1,6 +1,23 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<style type="text/css">
+		.row {
+			width: 80%;
+			max-width: 1080px;
+			background: #ddd;
+			padding: 1%;
+			margin: auto;
+		}
+		.column {
+			display: inline-block;
+			width: 30%;
+			border: solid 1px #ccc;
+		}
+		.column + .column {
+			margin-left: 1%;
+		}
+	</style>
 	<title></title>
 </head>
 <body>
@@ -16,6 +33,17 @@
 	<h1>Hello World</h1>
 	<p>I'm hosting with GitHub Pages</p>
 
-    <div class="fb-page" data-href="https://www.facebook.com/facebook/" data-tabs="timeline" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/facebook/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/facebook/">Facebook</a></blockquote></div>
+	<div class="row">
+		<div class="column">
+			<h2>Column 1</h2>
+		</div>
+		<div class="column">
+			<h2>Column 2</h2>
+		</div>
+		<div class="column">
+			<h2>Column 3</h2>
+			<div class="fb-page" data-href="https://www.facebook.com/facebook/" data-tabs="timeline" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/facebook/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/facebook/">Facebook</a></blockquote></div>
+		</div>
+	</div>
 </body>
 </html>
