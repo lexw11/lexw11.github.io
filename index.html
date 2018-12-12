@@ -33,14 +33,14 @@
 	<h1>Hello World</h1>
 	<p>I'm hosting with GitHub Pages</p>
 
-	<div class="row">
-		<div class="column">
+	<div id="footer">
+		<div class="col-sm-4">
 			<h2>Column 1</h2>
 		</div>
-		<div class="column">
+		<div class="col-sm-4">
 			<h2>Column 2</h2>
 		</div>
-		<div class="column" id="fb-column">
+		<div class="col-sm-4">
 			<h2>Column 3</h2>
 			<div class="fb-page" data-href="https://www.facebook.com/facebook/" data-tabs="timeline" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/facebook/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/facebook/">Facebook</a></blockquote></div>
 		</div>
@@ -52,19 +52,34 @@
   integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
   crossorigin="anonymous"></script>
   <script type="text/javascript">
-  	var GLOBALobject = GLOBALobject || {};
-  	$(window).on('resize', function() {
-	   setTimeout(function(){GLOBALobject.changeFBPagePlugin()}, 500);
-	});
+ //  	var GLOBALobject = GLOBALobject || {};
+ //  	$(window).on('resize', function() {
+	//    setTimeout(function(){GLOBALobject.changeFBPagePlugin()}, 500);
+	// });
 	 
-	$(window).on('load', function() {
-	   setTimeout(function(){GLOBALobject.changeFBPagePlugin()}, 1500);
+	// $(window).on('load', function() {
+	//    setTimeout(function(){GLOBALobject.changeFBPagePlugin()}, 1500);
+	// });
+	// GLOBALobject.changeFBPagePlugin = function () {
+	//    //getting parent box width
+	//    var container_width = (Number($('#fb-column').width()) - Number($('#fb-column').css('padding-left').replace("px", ""))).toFixed(0);
+	//    if (!isNaN(container_width)) {
+	//       $(".fb-page").attr("data-width", container_width);
+	//    }
+	//    if (typeof FB !== 'undefined' ) {
+	//       FB.XFBML.parse();
+	//    }
+	// }
+
+	$(window).on('resize', function() {
+	   setTimeout(function(){ fbPagePluginResize() }, 500 );
 	});
-	GLOBALobject.changeFBPagePlugin = function () {
-	   //getting parent box width
-	   var container_width = (Number($('#fb-column').width()) - Number($('#fb-column').css('padding-left').replace("px", ""))).toFixed(0);
-	   if (!isNaN(container_width)) {
-	      $(".fb-page").attr("data-width", container_width);
+	function fbPagePluginResize() {
+	   // Get parent container width
+	   var $fbContainer = $('#footer').find('.col-sm-4').last();
+	   var fbWidth = (Number( $fbContainer.width() )).toFixed(0);
+	   if (!isNaN(fbWidth)) {
+	      $(".fb-page").attr("data-width", fbWidth);
 	   }
 	   if (typeof FB !== 'undefined' ) {
 	      FB.XFBML.parse();
