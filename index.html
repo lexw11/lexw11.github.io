@@ -2,19 +2,19 @@
 <html>
 <head>
 	<style type="text/css">
-		.row {
+		#footer {
 			width: 80%;
 			max-width: 1080px;
 			background: #ddd;
 			padding: 1%;
 			margin: auto;
 		}
-		.column {
+		.col-sm-4 {
 			display: inline-block;
 			width: 30%;
 			border: solid 1px #ccc;
 		}
-		.column + .column {
+		.col-sm-4 + .col-sm-4 {
 			margin-left: 1%;
 		}
 	</style>
@@ -71,6 +71,7 @@
 	//    }
 	// }
 
+	// Make Facebook Page Plugin resize when screen resizes
 	$(window).on('resize', function() {
 	   setTimeout(function(){ fbPagePluginResize() }, 500 );
 	});
